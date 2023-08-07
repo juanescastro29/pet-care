@@ -11,7 +11,7 @@ const Carousel = ({ type }) => {
   return (
     <>
       {type === "pets" && (
-        <div className="carousel rounded-box w-96">
+        <div className="carousel rounded-box w-96 m-2">
           <div className="carousel-item w-1/2">
             <img src={Pet1} className="w-full" alt="petCarousel" />
           </div>
@@ -27,7 +27,7 @@ const Carousel = ({ type }) => {
         </div>
       )}
       {type === "appointment" && (
-        <div className="carousel rounded-box w-96">
+        <div className="carousel rounded-box w-96 m-2">
           <div className="carousel-item w-1/2">
             <img src={Vet1} className="w-full" alt="vetCarousel" />
           </div>

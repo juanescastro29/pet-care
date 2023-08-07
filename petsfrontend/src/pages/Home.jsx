@@ -25,11 +25,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full lg:flex-row p-6" data-theme="cupcake">
-        <div className="grid flex-grow h-full card bg-base-200 rounded-box place-items-center">
+      <div className="flex flex-col lg:flex-row p-5" data-theme="cupcake">
+        <div className="grid h-full flex-grow card bg-base-300 rounded-box place-items-center lg:mr-4 mb-4 lg:mb-0">
           <div className="flex flex-col items-center justify-center p-5">
-            <h1 className="text-center font-semibold text-xl">Regist Pet</h1>
-            <p className="text-justify p-2">
+            <h1 className="text-center font-semibold text-xl mb-4 lg:mb-6">Regist Pet</h1>
+            <p className="text-justify mb-4 lg:mb-6">
               To begin this process, it's important to register your pet in our
               system. This will allow us to gather essential details about your
               pet, such as its medical history, age, breed, and specific needs.
@@ -39,7 +39,7 @@ const Home = () => {
             <div className="p-5">
               <Carousel type="pets" />
             </div>
-            <div>
+            <div className="mt-auto">
               <Link to="/registpet" className="btn btn-active btn-ghost">
                 Regist Pet
               </Link>
@@ -47,12 +47,12 @@ const Home = () => {
           </div>
         </div>
         <div className="divider lg:divider-horizontal"></div>
-        <div className="grid flex-grow h-full card bg-base-200 rounded-box place-items-center">
+        <div className="grid h-full flex-grow card bg-base-300 rounded-box place-items-center lg:ml-4">
           <div className="flex flex-col items-center justify-center p-5">
-            <h1 className="text-center font-semibold text-xl">
+            <h1 className="text-center font-semibold text-xl lg:mb-6">
               Create Appointment
             </h1>
-            <p className="text-justify p-2">
+            <p className="text-justify mb-4 lg:mb-6">
               To ensure that each pet receives the personalized attention it
               deserves, we have implemented an appointment system for
               consultations and treatments. This process ensures that every pet
@@ -62,7 +62,7 @@ const Home = () => {
             <div className="p-5">
               <Carousel type="appointment" />
             </div>
-            <div>
+            <div className="mt-auto">
               <Link
                 to="/createappointment"
                 className="btn btn-active btn-ghost"
