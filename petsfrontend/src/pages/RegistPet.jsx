@@ -25,7 +25,7 @@ const RegistPet = () => {
         }
       );
       const imageUrl = await responseCloud.json();
-      if (imageUrl.error.mesage) {
+      if (imageUrl.error) {
         setResponseError(imageUrl.error.message);
         return;
       }
