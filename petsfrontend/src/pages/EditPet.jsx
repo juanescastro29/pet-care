@@ -66,7 +66,7 @@ const EditPet = () => {
         <>
           <div className="flex" data-theme="cupcake">
             <button
-              className="btn btn-active btn-ghost sm:col-span-3 m-5"
+              className="btn btn-ghost sm:col-span-3 m-5"
               onClick={() => navigate("/viewpets")}
             >
               Go back
