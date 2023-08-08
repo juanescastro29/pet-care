@@ -32,11 +32,6 @@ const RegistPet = () => {
   return (
     <div className="hero min-h-screen" data-theme="cupcake">
       <div className="hero-content flex-col-reverse lg:flex-row">
-        <img
-          src={Bella2}
-          className="max-w-sm rounded-lg shadow-2xl w-2/3"
-          alt="petRegist"
-        />
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
           <form
             className="card-body grid grid-cols-2 gap-2"
@@ -123,12 +118,9 @@ const RegistPet = () => {
                 name="size"
                 {...register("size", {
                   required: true,
-                  
                 })}
               >
-                <option value="">
-                  Select the size of the pet
-                </option>
+                <option value="">Select the size of the pet</option>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Big">Big</option>
@@ -149,6 +141,12 @@ const RegistPet = () => {
             )}
           </form>
         </div>
+        <div className="divider lg:divider-horizontal"></div>
+        <img
+          src={Bella2}
+          className="max-w-sm rounded-lg shadow-2xl w-96"
+          alt="petRegist"
+        />
       </div>
     </div>
   );

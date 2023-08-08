@@ -9,7 +9,7 @@ const CreateAppointment = () => {
   const [selectedDate, setSelectedDate] = useState();
   const [pets, setPets] = useState([]);
   const [responseError, setResponseError] = useState();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
@@ -28,25 +28,27 @@ const CreateAppointment = () => {
   }, []);
 
   async function createAppointment(dataForm) {
-    const response = await fetch(`http://localhost:4000/appointment/${dataForm.pet}`,{
-      method:"POST",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify(dataForm)
-    })
-    const data = await response.json()
+    const response = await fetch(
+      `http://localhost:4000/appointment/${dataForm.pet}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(dataForm),
+      }
+    );
+    const data = await response.json();
     if (data.message === "New appointment created") {
-      navigate("/viewappointments")
-    }else {
-      setResponseError(data.message)
+      navigate("/viewappointments");
+    } else {
+      setResponseError(data.message);
     }
   }
 
   return (
     <div className="hero min-h-screen" data-theme="cupcake">
-      <div className="hero-content flex-col-reverse lg:flex-row">
-        <Carousel type="form" />
+      <div className="hero-content flex-col lg:flex-row">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
           <form
             className="card-body grid grid-cols-2 gap-2"
@@ -162,6 +164,8 @@ const CreateAppointment = () => {
             )}
           </form>
         </div>
+        <div className="divider lg:divider-horizontal"></div>
+        <Carousel type="form" />
       </div>
     </div>
   );
