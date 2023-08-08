@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import Pet1 from "../assets/pet2.jpg";
+import Bella2 from "../assets/Bella2.jpeg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,7 +33,7 @@ const RegistPet = () => {
     <div className="hero min-h-screen" data-theme="cupcake">
       <div className="hero-content flex-col-reverse lg:flex-row">
         <img
-          src={Pet1}
+          src={Bella2}
           className="max-w-sm rounded-lg shadow-2xl w-80"
           alt="petRegist"
         />

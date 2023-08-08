@@ -53,7 +53,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl h-16 w-24" to="/">
+        <Link className="btn btn-ghost hidden normal-case text-xl h-16 w-24 lg:block" to="/">
           <img src={VetLogo} alt="vetLogo" width={80} />
         </Link>
       </div>
@@ -86,7 +86,11 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end"></div>
+      <div className="navbar-end">
+        <Link className="btn btn-ghost normal-case text-xl h-16 w-24 lg:hidden" to="/">
+          <img src={VetLogo} alt="vetLogo" width={80} />
+        </Link>
+      </div>
     </div>
   );
 };
