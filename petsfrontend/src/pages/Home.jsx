@@ -25,11 +25,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="hero min-h-full p-8" data-theme="cupcake">
+
+      <div className="hero min-h-full" data-theme="cupcake">
         <div className="hero-content flex-col lg:flex-row">
           <Carousel type="pets" />
           <div>
-            <h1 className="text-5xl font-bold">Regist Pet</h1>
+            <h1 className="text-3xl font-bold lg:text-5xl">Pets</h1>
             <p className="py-6 text-justify">
               To begin this process, it's important to register your pet in our
               system. This will allow us to gather essential details about your
@@ -45,11 +46,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="hero min-h-full p-8" data-theme="cupcake">
+
+      <div className="hero min-h-full" data-theme="cupcake">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <Carousel type="appointments" />
           <div>
-            <h1 className="text-5xl font-bold">Create Appointment</h1>
+            <h1 className="text-3xl font-bold lg:text-5xl">Appointments</h1>
             <p className="py-6 text-justify">
               To ensure that each pet receives the personalized attention it
               deserves, we have implemented an appointment system for

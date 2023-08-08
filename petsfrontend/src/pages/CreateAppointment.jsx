@@ -47,16 +47,17 @@ const CreateAppointment = () => {
   }
 
   return (
-    <div className="hero min-h-screen" data-theme="cupcake">
+    <div className="hero min-h-screen min-w-fit" data-theme="cupcake">
       <div className="hero-content flex-col lg:flex-row">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
           <form
             className="card-body grid grid-cols-2 gap-2"
             onSubmit={handleSubmit(createAppointment)}
           >
-            <h1 className="text-2xl font-bold col-span-2 text-center">
-              Create Appointment
+            <h1 className="text-3xl lg:text-4xl font-bold col-span-2 text-center">
+              Appointments
             </h1>
+
             <div className="form-control col-span-2">
               <label className="label">
                 <span className="label-text">Date</span>

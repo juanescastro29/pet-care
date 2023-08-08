@@ -30,14 +30,14 @@ const RegistPet = () => {
   }
 
   return (
-    <div className="hero min-h-screen" data-theme="cupcake">
+    <div className="hero min-h-screen min-w-fit" data-theme="cupcake">
       <div className="hero-content flex-col-reverse lg:flex-row">
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
+        <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-200">
           <form
-            className="card-body grid grid-cols-2 gap-2"
+            className="card-body grid grid-cols-2"
             onSubmit={handleSubmit(registPet)}
           >
-            <h1 className="text-2xl font-bold col-span-2 text-center">
+            <h1 className="text-3xl lg:text-4xl font-bold col-span-2 text-center">
               Regist Pet
             </h1>
             <div className="form-control col-span-2">
@@ -144,7 +144,7 @@ const RegistPet = () => {
         <div className="divider lg:divider-horizontal"></div>
         <img
           src={Bella2}
-          className="max-w-sm rounded-lg shadow-2xl w-96"
+          className="max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg shadow-2xl w-full"
           alt="petRegist"
         />
       </div>

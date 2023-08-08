@@ -43,20 +43,36 @@ const Carousel = ({ type }) => {
         </div>
       )}
       {type === "form" && (
-        <div className="w-96 carousel rounded-box">
-        <div className="carousel-item w-full">
-          <img src={Vet1} className="w-full" alt="Tailwind CSS Carousel component" />
-        </div> 
-        <div className="carousel-item w-full">
-          <img src={Vet2} className="w-full" alt="Tailwind CSS Carousel component" />
-        </div> 
-        <div className="carousel-item w-full">
-          <img src={Vet3} className="w-full" alt="Tailwind CSS Carousel component" />
-        </div> 
-        <div className="carousel-item w-full">
-          <img src={Vet4} className="w-full" alt="Tailwind CSS Carousel component" />
+        <div className="w-full md:w-80 carousel rounded-box">
+          <div className="carousel-item w-full">
+            <img
+              src={Vet1}
+              className="w-full"
+              alt="Tailwind CSS Carousel component"
+            />
+          </div>
+          <div className="carousel-item w-full">
+            <img
+              src={Vet2}
+              className="w-full"
+              alt="Tailwind CSS Carousel component"
+            />
+          </div>
+          <div className="carousel-item w-full">
+            <img
+              src={Vet3}
+              className="w-full"
+              alt="Tailwind CSS Carousel component"
+            />
+          </div>
+          <div className="carousel-item w-full">
+            <img
+              src={Vet4}
+              className="w-full"
+              alt="Tailwind CSS Carousel component"
+            />
+          </div>
         </div>
-      </div>
       )}
     </>
   );
