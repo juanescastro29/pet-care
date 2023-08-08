@@ -4,15 +4,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const RegistPet = () => {
+  const [responseError, setResponseError] = useState();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
-  const [responseError, setResponseError] = useState();
-  const navigate = useNavigate();
 
   async function registPet(dataForm) {
+    setLoading(true);
+    setResponseError("");
     if (dataForm.image[0]) {
       const image = new FormData();
       image.append("file", dataForm.image[0]);
@@ -26,6 +30,7 @@ const RegistPet = () => {
       );
       const imageUrl = await responseCloud.json();
       if (imageUrl.error) {
+        setLoading(false);
         setResponseError(imageUrl.error.message);
         return;
       }
@@ -45,6 +50,7 @@ const RegistPet = () => {
     if (data.message === "Pet created succesfully") {
       navigate("/viewpets");
     } else {
+      setLoading(false);
       setResponseError(data.message);
     }
   }
@@ -169,9 +175,15 @@ const RegistPet = () => {
                 </div>
               )}
             </div>
-            <div className="form-control mt-6 col-span-2">
-              <button className="btn btn-primary">Regist</button>
-            </div>
+            {loading === false ? (
+              <div className="form-control mt-6 col-span-2">
+                <button className="btn btn-primary">Regist</button>
+              </div>
+            ) : (
+              <div className="mt-6 col-span-2 content-center text-center justify-center">
+                <span className="loading loading-dots loading-lg"></span>
+              </div>
+            )}
             {responseError && (
               <div className="text-red-600 col-span-2 text-center">
                 <small>{responseError}</small>

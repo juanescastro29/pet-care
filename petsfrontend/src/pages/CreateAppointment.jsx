@@ -10,6 +10,7 @@ const CreateAppointment = () => {
   const [pets, setPets] = useState([]);
   const [responseError, setResponseError] = useState();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -28,6 +29,8 @@ const CreateAppointment = () => {
   }, []);
 
   async function createAppointment(dataForm) {
+    setLoading(true);
+    setResponseError("");
     const response = await fetch(
       `http://localhost:4000/appointment/${dataForm.pet}`,
       {
@@ -155,9 +158,15 @@ const CreateAppointment = () => {
                 </div>
               )}
             </div>
-            <div className="form-control mt-6 col-span-2">
-              <button className="btn btn-primary">Create Appointment</button>
-            </div>
+            {loading === false ? (
+              <div className="form-control mt-6 col-span-2">
+                <button className="btn btn-primary">Regist</button>
+              </div>
+            ) : (
+              <div className="mt-6 col-span-2 content-center text-center justify-center">
+                <span className="loading loading-dots loading-lg"></span>
+              </div>
+            )}
             {responseError && (
               <div className="text-red-600 col-span-2 text-center">
                 <small>{responseError}</small>
