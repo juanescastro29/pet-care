@@ -7,6 +7,7 @@ const EditPet = () => {
   const navigate = useNavigate();
   const [responseError, setResponseError] = useState();
   const [pet, setPet] = useState();
+  const [loading, setLoading] = useState(false);
 
   const {
     handleSubmit,
@@ -26,6 +27,8 @@ const EditPet = () => {
   }, []);
 
   async function registPet(dataForm) {
+    setLoading(true);
+    setResponseError("");
     const _id = location.state;
     if (dataForm.image[0]) {
       const image = new FormData();
