@@ -25,7 +25,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="hero min-h-full p-5" data-theme="cupcake">
+      <div className="hero min-h-full p-8" data-theme="cupcake">
         <div className="hero-content flex-col lg:flex-row">
           <Carousel type="pets" />
           <div>
@@ -37,13 +37,15 @@ const Home = () => {
               Through this information, our veterinarians will be able to
               provide the best possible care.
             </p>
-            <Link to="/registpet" className="btn btn-ghost btn-active">
-              Regist Pet
-            </Link>
+            <div className="text-center sm:w-full sm:text-left">
+              <Link to="/registpet" className="btn btn-ghost btn-active">
+                Regist Pet
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      <div className="hero min-h-full p-5" data-theme="cupcake">
+      <div className="hero min-h-full p-8" data-theme="cupcake">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <Carousel type="appointments" />
           <div>
@@ -55,7 +57,14 @@ const Home = () => {
               receives the appropriate time and attention from our expert
               veterinarians.
             </p>
-            <Link className="btn btn-ghost btn-active">Regist Pet</Link>
+            <div className="text-center sm:w-full sm:text-left">
+              <Link
+                to="/createappointment"
+                className="btn btn-ghost btn-active"
+              >
+                Create Appointment
+              </Link>
+            </div>
           </div>
         </div>
       </div>
