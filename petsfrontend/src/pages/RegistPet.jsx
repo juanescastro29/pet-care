@@ -34,7 +34,7 @@ const RegistPet = () => {
       <div className="hero-content flex-col-reverse lg:flex-row">
         <img
           src={Bella2}
-          className="max-w-sm rounded-lg shadow-2xl w-80"
+          className="max-w-sm rounded-lg shadow-2xl w-96"
           alt="petRegist"
         />
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
