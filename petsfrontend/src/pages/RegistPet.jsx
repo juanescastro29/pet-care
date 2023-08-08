@@ -13,6 +13,26 @@ const RegistPet = () => {
   const navigate = useNavigate();
 
   async function registPet(dataForm) {
+    if (dataForm.image[0]) {
+      const image = new FormData();
+      image.append("file", dataForm.image[0]);
+      image.append("upload_preset", "pets-care");
+      const responseCloud = await fetch(
+        "https://api.cloudinary.com/v1_1/dbhl95fyu/image/upload",
+        {
+          method: "POST",
+          body: image,
+        }
+      );
+      const imageUrl = await responseCloud.json();
+      if (imageUrl.error.mesage) {
+        setResponseError(imageUrl.error.message);
+        return;
+      }
+      dataForm.image = imageUrl.secure_url;
+    } else {
+      dataForm.image = "";
+    }
     const response = await fetch("http://localhost:4000/pet", {
       method: "POST",
       headers: {
@@ -62,6 +82,24 @@ const RegistPet = () => {
               {errors.name?.type === "pattern" && (
                 <div className="text-red-600 text-center">
                   <small>Only letters are accepted.</small>
+                </div>
+              )}
+            </div>
+            <div className="form-control col-span-2">
+              <label className="label">
+                <span className="label-text">Image</span>
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                className="file-input file-input-bordered file-input-md w-full max-w-xs"
+                {...register("image", {
+                  required: true,
+                })}
+              />
+              {errors.image?.type === "required" && (
+                <div className="text-red-600 text-center">
+                  <small>This field is required.</small>
                 </div>
               )}
             </div>
@@ -144,7 +182,7 @@ const RegistPet = () => {
         <div className="divider lg:divider-horizontal"></div>
         <img
           src={Bella2}
-          className="max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg shadow-2xl w-full"
+          className="max-w-sm md:max-w-md rounded-lg shadow-2xl w-full"
           alt="petRegist"
         />
       </div>

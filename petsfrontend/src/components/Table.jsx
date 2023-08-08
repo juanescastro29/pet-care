@@ -10,7 +10,7 @@ import ModalForm from "./ModalForm";
 
 const Table = ({ data, type }) => {
   const [deleteId, setDeleteId] = useState();
-  const [dataModal, setDataModal] = useState({});
+  const [dataModal, setDataModal] = useState();
   const [typeData, setTypeData] = useState("");
 
   function assignId(id) {
@@ -25,7 +25,7 @@ const Table = ({ data, type }) => {
     }
   }
 
-  async function assignData(id) {
+  function assignData(id) {
     if (type === "pets") {
       setDataModal(id)
       setTypeData("pets");
@@ -78,13 +78,13 @@ const Table = ({ data, type }) => {
                       >
                         <img src={EditPet} alt="icon" width={32} />
                       </Link>
-                      <button
+                      <Link
                         className="btn btn-sm btn-ghost tooltip normal-case"
                         data-tip="Delete Pet"
                         onClick={() => assignId(pet._id)}
                       >
                         <img src={DeletePet} alt="icon" width={32} />
-                      </button>
+                      </Link>
                     </td>
                   </tr>
                 ))

@@ -9,12 +9,14 @@ import Navbar from "./components/Navbar";
 import Footer from './components/Footer'
 import {
   CREATEAPPOINTMENT,
+  EDITPET,
   HOME,
   NOTFOUND,
   REGISTPET,
   VIEWAPPOINTMENTS,
   VIEWPETS,
 } from "./routes/public";
+import EditPet from "./pages/EditPet";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path={VIEWPETS} element={<ViewPets />} />
         <Route path={VIEWAPPOINTMENTS} element={<ViewAppointments />} />
         <Route path={REGISTPET} element={<RegistPet />} />
+        <Route path={EDITPET} element={<EditPet />} />
         <Route path={CREATEAPPOINTMENT} element={<CreateAppointment />} />
         <Route path={NOTFOUND} element={<NotFound />} />
       </Routes>

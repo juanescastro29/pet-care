@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const petSchema = new Schema(
   {
     name: { type: String, required: true },
+    image: { type: String, required: true },
     race: { type: String, required: true },
     age: { type: String, required: true },
     size: { type: String, required: true },

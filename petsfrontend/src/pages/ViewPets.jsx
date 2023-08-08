@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Table from "../components/Table";
 import { Link } from "react-router-dom";
+import Cards from "../components/Cards";
 
 const ViewPets = () => {
   const [pets, setPets] = useState({});
@@ -10,7 +10,7 @@ const ViewPets = () => {
     async function fetchPets() {
       const response = await fetch("http://localhost:4000/pet");
       const data = await response.json();
-      setPets(data.slice(10 * (page - 1), 10 * page));
+      setPets(data.slice(9 * (page - 1), 9 * page));
     }
     fetchPets();
   }, [page]);
@@ -19,7 +19,7 @@ const ViewPets = () => {
     <>
       {pets.length > 0 ? (
         <div className="min-h-screen" data-theme="cupcake">
-          <Table data={pets} type="pets" />
+          <Cards pets={pets}/>
           <div
             className="join w-full p-5 content-center justify-center"
             data-theme="cupcake"
@@ -56,7 +56,9 @@ const ViewPets = () => {
                   <h1 className="text-3xl font-bold py-10">
                     No registered pets
                   </h1>
-                  <Link to="/registpet" className="btn btn-ghost btn-active">Regist a pet</Link>
+                  <Link to="/registpet" className="btn btn-ghost btn-active">
+                    Regist a pet
+                  </Link>
                 </div>
               </div>
             </div>

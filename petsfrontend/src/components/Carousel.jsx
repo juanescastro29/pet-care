@@ -43,7 +43,7 @@ const Carousel = ({ type }) => {
         </div>
       )}
       {type === "form" && (
-        <div className="w-full md:w-80 carousel rounded-box">
+        <div className="w-full md:w-96 carousel rounded-box">
           <div className="carousel-item w-full">
             <img
               src={Vet1}
