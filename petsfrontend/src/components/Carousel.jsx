@@ -43,7 +43,7 @@ const Carousel = ({ type }) => {
         </div>
       )}
       {type === "form" && (
-        <div className="w-1/4 carousel rounded-box">
+        <div className="w-80 carousel rounded-box">
         <div className="carousel-item w-full">
           <img src={Vet1} className="w-full" alt="Tailwind CSS Carousel component" />
         </div> 
