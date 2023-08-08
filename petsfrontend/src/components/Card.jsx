@@ -17,7 +17,7 @@ const Card = ({ _id, name, race, size, image, age }) => {
 
   return (
     <>
-      <div className="card w-96 bg-base-200 shadow-2xl">
+      <div className="card md:w-80 bg-base-200 shadow-2xl">
         <figure className="px-10 pt-10">
           <img
             src={image}
