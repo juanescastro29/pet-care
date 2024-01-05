@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import Bella2 from "../assets/Bella2.jpeg";
+import Bella2 from "../assets/Bella2.webp";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

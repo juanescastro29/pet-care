@@ -1,11 +1,11 @@
-import Pet1 from "../assets/pet1.jpg";
-import Pet2 from "../assets/pet2.jpg";
-import Pet3 from "../assets/pet3.jpg";
-import Pet4 from "../assets/pet4.jpg";
-import Vet1 from "../assets/vet1.jpg";
-import Vet2 from "../assets/vet2.jpg";
-import Vet3 from "../assets/vet3.jpg";
-import Vet4 from "../assets/vet4.jpg";
+import Pet1 from "../assets/pet1.webp";
+import Pet2 from "../assets/pet2.webp";
+import Pet3 from "../assets/pet3.webp";
+import Pet4 from "../assets/pet4.webp";
+import Vet1 from "../assets/vet1.webp";
+import Vet2 from "../assets/vet2.webp";
+import Vet3 from "../assets/vet3.webp";
+import Vet4 from "../assets/vet4.webp";
 
 const Carousel = ({ type }) => {
   return (

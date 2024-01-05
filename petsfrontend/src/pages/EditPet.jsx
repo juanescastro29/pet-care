@@ -18,7 +18,7 @@ const EditPet = () => {
   useEffect(() => {
     async function fetchPet() {
       const _id = location.state;
-      const response = await fetch(`http://localhost:4000/pet/${_id}`);
+      const response = await fetch(`https://petbackend.vercel.app/pet/${_id}`);
       const data = await response.json();
       console.log(data);
       setPet(data);
@@ -43,8 +43,8 @@ const EditPet = () => {
       );
       const imageUrl = await responseCloud.json();
       dataForm.image = imageUrl.secure_url;
-    } 
-    const response = await fetch(`http://localhost:4000/pet/${_id}`, {
+    }
+    const response = await fetch(`https://petbackend.vercel.app/pet/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -166,9 +166,15 @@ const EditPet = () => {
                       <option value="Big">Big</option>
                     </select>
                   </div>
-                  <div className="form-control mt-6 col-span-2">
-                    <button className="btn btn-primary">Confirm</button>
-                  </div>
+                  {loading === false ? (
+                    <div className="form-control mt-6 col-span-2">
+                      <button className="btn btn-primary">Confirm</button>
+                    </div>
+                  ) : (
+                    <div className="mt-6 col-span-2 content-center text-center justify-center">
+                      <span className="loading loading-dots loading-lg"></span>
+                    </div>
+                  )}
                   {responseError && (
                     <div className="text-red-600 col-span-2 text-center">
                       <small>{responseError}</small>
